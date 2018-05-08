@@ -2,4 +2,6 @@
     <string name="app_name">Sorting</string>
     <string name="Generate">Generate</string>
     <string name="Sort">Sort</string>
+    <string name="bubble_sort">Bubble Sort</string>
+    <string name="el_array_va_aqui">El array va aqui</string>
 </resources>

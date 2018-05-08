@@ -13,7 +13,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
-        android:text="Bubble Sort"
+        android:text="@string/bubble_sort"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -44,8 +44,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.353"
-        tools:onClick="generateOnClick" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <Button
         android:id="@+id/button2"
@@ -64,15 +63,14 @@
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.354"
-        tools:onClick="sortOnClick" />
+        app:layout_constraintVertical_bias="0.354" />
 
     <TextView
         android:id="@+id/tes"
         android:layout_width="290dp"
         android:layout_height="141dp"
         android:layout_marginTop="52dp"
-        android:text="El array va aqui"
+        android:text="@string/el_array_va_aqui"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
