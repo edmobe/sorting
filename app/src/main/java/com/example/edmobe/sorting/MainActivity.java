@@ -3,16 +3,45 @@ package com.example.edmobe.sorting;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Random;
 
+import static com.example.edmobe.sorting.R.id.button;
+import static com.example.edmobe.sorting.R.id.button2;
+
 public class MainActivity extends AppCompatActivity {
+    //  Buttons and text declaration
+    TextView txt;
+    Button bttn;
+    Button bttn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        txt =  findViewById(R.id.tes);
+        bttn = findViewById(button);
+        bttn2 = findViewById(button2);
+
+        bttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                txt.setText("Generate");
+            }
+        });
+        bttn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                txt.setText("Sort");
+            }
+        });
         //Debugging
         int[] array = createRandomArray();
         printArray(array);
