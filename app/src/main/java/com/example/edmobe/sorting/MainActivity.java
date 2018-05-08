@@ -5,18 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import static com.example.edmobe.sorting.R.id.button;
 import static com.example.edmobe.sorting.R.id.button2;
 
 public class MainActivity extends AppCompatActivity {
-    //  Buttons and text declaration
+    //  Vatiable declaration
     TextView txt;
     Button bttn;
     Button bttn2;
+    int[] array;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 txt.setText("Generate");
+                array = createRandomArray();
+                String str = Arrays.toString(array);
+                txt.setText(str);
             }
         });
         bttn2.setOnClickListener(new View.OnClickListener() {
@@ -40,14 +46,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 txt.setText("Sort");
+                int comparisons = bubbleSort(array);
+                String str = Arrays.toString(array);
+                txt.setText(str);
             }
         });
         //Debugging
+        /*
         int[] array = createRandomArray();
         printArray(array);
         int comparisons = bubbleSort(array);
         printArray(array);
         System.out.println("Comparisons = " + comparisons);
+        */
 
     }
 
@@ -97,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 array[i] = array[i+1];
                 array[i+1] = temp;
                 comparisons++;
+
             }
 
         // Largest element is fixed,
