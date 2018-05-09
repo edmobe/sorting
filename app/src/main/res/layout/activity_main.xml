@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@drawable/background"
-    >
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -70,14 +69,21 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="128dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginStart="148dp"
         android:text="Skip"
         android:textStyle="italic"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <TextView
         android:id="@+id/tes"
-        android:layout_width="290dp"
-        android:layout_height="141dp"
+        android:layout_width="285dp"
+        android:layout_height="108dp"
         android:layout_marginTop="52dp"
         android:text="Please press Generate to show an array in display"
         android:textColor="@android:color/black"
@@ -88,6 +94,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="279dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginStart="50dp"
+        android:text="asd"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 
 </android.support.constraint.ConstraintLayout>

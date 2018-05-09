@@ -2,6 +2,7 @@
 package com.example.edmobe.sorting;
 
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,10 +20,13 @@ import static com.example.edmobe.sorting.R.id.button3;
 public class MainActivity extends AppCompatActivity {
     //  Vatiable declaration
     TextView txt;
+    TextView txt2;
     Button bttn;
     Button bttn2;
     Button bttn3;
     int[] array;
+
+
 
 
     @Override
@@ -32,39 +36,44 @@ public class MainActivity extends AppCompatActivity {
 
 
         txt =  findViewById(R.id.tes);
+        txt2 = findViewById(R.id.textView2);
         bttn = findViewById(button);
         bttn2 = findViewById(button2);
         bttn3 = findViewById(button3);
 
-        bttn.setOnClickListener(new View.OnClickListener() {
+        bttn.setOnClickListener(new View.OnClickListener() { //Generate Button
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //Generate Button
 
-                array = createRandomArray();
-                String str = Arrays.toString(array);
-                txt.setText(str);
+                array = createRandomArray(); //Creates an array
+                String str = Arrays.toString(array); // Change the type of the array to a String
+                txt.setText(str); // Set de String array in display
+                txt2.setText("Comparasions " + 0);
+                txt2.setVisibility(1);
                 bttn2.setVisibility(1);
                 bttn3.setVisibility(1);
-                //Mostrar la cantidad de comparaciones
-                //nuevo boton que vaya mostrando paso a paso
+
             }
         });
-        bttn2.setOnClickListener(new View.OnClickListener() {
+        bttn2.setOnClickListener(new View.OnClickListener() { //Sort Button
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //Sort Button
 
 
-                int comparisons = bubbleSort(array);
+
+            }
+        });
+        bttn3.setOnClickListener(new View.OnClickListener() { //Skip Button
+
+            @Override
+            public void onClick(View v) { //Skip Button
+
+
+                int comparisons = bubbleSort(array); //
                 String str = Arrays.toString(array);
                 txt.setText(str);
-            }
-        });
-        bttn3.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                txt.setText("Hola");
+                txt2.setText("Comparasions " + comparisons);
+                txt2.setVisibility(1);
 
 
             }
@@ -134,5 +143,6 @@ public class MainActivity extends AppCompatActivity {
 
         return bubbleSort(array, n-1, comparisons);
     }
+
 
 }
