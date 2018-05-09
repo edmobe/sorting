@@ -14,12 +14,14 @@ import java.util.Random;
 
 import static com.example.edmobe.sorting.R.id.button;
 import static com.example.edmobe.sorting.R.id.button2;
+import static com.example.edmobe.sorting.R.id.button3;
 
 public class MainActivity extends AppCompatActivity {
     //  Vatiable declaration
     TextView txt;
     Button bttn;
     Button bttn2;
+    Button bttn3;
     int[] array;
 
 
@@ -32,16 +34,17 @@ public class MainActivity extends AppCompatActivity {
         txt =  findViewById(R.id.tes);
         bttn = findViewById(button);
         bttn2 = findViewById(button2);
+        bttn3 = findViewById(button3);
 
         bttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                txt.setText("Generate");
                 array = createRandomArray();
                 String str = Arrays.toString(array);
                 txt.setText(str);
                 bttn2.setVisibility(1);
+                bttn3.setVisibility(1);
                 //Mostrar la cantidad de comparaciones
                 //nuevo boton que vaya mostrando paso a paso
             }
@@ -50,10 +53,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                txt.setText("Sort");
+
                 int comparisons = bubbleSort(array);
                 String str = Arrays.toString(array);
                 txt.setText(str);
+            }
+        });
+        bttn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                txt.setText("Hola");
+
+
             }
         });
         //Debugging
