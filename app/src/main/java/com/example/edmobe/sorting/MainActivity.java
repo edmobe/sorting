@@ -1,6 +1,7 @@
 
 package com.example.edmobe.sorting;
 
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Button bttn2;
     int[] array;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 array = createRandomArray();
                 String str = Arrays.toString(array);
                 txt.setText(str);
+                bttn2.setVisibility(1);
+                //Mostrar la cantidad de comparaciones
+                //nuevo boton que vaya mostrando paso a paso
             }
         });
         bttn2.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Largest element is fixed,
         // recur for remaining array
+
         return bubbleSort(array, n-1, comparisons);
     }
+
 }
