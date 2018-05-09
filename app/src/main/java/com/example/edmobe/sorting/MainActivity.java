@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int[] createRandomArray() {
-        /*Random random = new Random();
+        Random random = new Random();
         int max = 40;
         int min = 20;
         int length = random.nextInt(max - min) + min; // the length of the array is a random number between 20 and 40
@@ -108,14 +108,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < length; i++) {
             array[i] = random.nextInt(100);
         }
-        */
-        array = new int[5];
 
-        array[0] = 50;
-        array[1] = 30;
-        array[2] = 20;
-        array[3] = 40;
-        array[4] = 10;
         return array;
     }
 
@@ -128,39 +121,31 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("-------------------------------------- END --------------------------------");
     }
 
+
+
     private int bubbleSort(int[] array) {
-
-
-        c = bubbleSort(array, c);
-        return c;
-    }
-
-    private int bubbleSort(int[] array, int comparisons) {
         // Base case
         if (n == 1)
-            return comparisons;
+            return c;
 
         // One pass of bubble sort. After
         // this pass, the largest element
         // is moved (or bubbled) to end.
         for (int i=0; i<n-1; i++) {
-            if (array[i] > array[i + 1]) {
+            if (array[i] > array[i + 1]) { //Comparación de cual número es mayor
                 // swap arr[i], arr[i+1]
                 int temp = array[i];
                 array[i] = array[i + 1];
                 array[i + 1] = temp;
-                comparisons++;
-
             }
-
-
+                c++;
         }
         // Largest element is fixed,
         // recur for remaining array
         this.n--;
-        return bubbleSort(array, comparisons);
+        return bubbleSort(array);
     }
-    private int compare(int[] array, int j){
+    private int compare(int[] array, int j){ //Método para comparar uno por uno
         if(this.n == 1){
             return 0;
         }else if (j == n-1){
@@ -177,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 return 1;
             }else{
                 this.j++;
-                return 0;
+                return 1;
 
             }
         }
