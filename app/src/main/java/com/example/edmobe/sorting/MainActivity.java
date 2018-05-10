@@ -86,14 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        //Debugging
-        /*
-        int[] array = createRandomArray();
-        printArray(array);
-        int comparisons = bubbleSort(array);
-        printArray(array);
-        System.out.println("Comparisons = " + comparisons);
-        */
 
     }
 
@@ -109,17 +101,10 @@ public class MainActivity extends AppCompatActivity {
             array[i] = random.nextInt(100);
         }
 
+
         return array;
     }
 
-    private void printArray(int[] array) {
-        System.out.println("-------------------------------------- ARRAY --------------------------------");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " -> ");
-        }
-        System.out.println();
-        System.out.println("-------------------------------------- END --------------------------------");
-    }
 
 
 
